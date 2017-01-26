@@ -11,5 +11,9 @@ import CoreData
 
 @objc(Item)
 public class Item: NSManagedObject {
-
+    //Everytime this object is inserted into the NSManagedObjectContext or create item from entity this function will be called
+    public override func awakeFromInsert() {
+        super.awakeFromInsert()
+        self.created = NSDate()
+    }
 }
