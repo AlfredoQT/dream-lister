@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="0dO-HS-Qti" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="0dO-HS-Qti" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0dO-HS-Qti" id="8Y1-3e-4wv">
@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="136.28185907046478"/>
         </scene>
-        <!--Add/Edit-->
+        <!--Add Item-->
         <scene sceneID="kzf-yR-a8K">
             <objects>
                 <viewController id="n6t-Ju-sEm" customClass="ItemDetailsVC" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="gHD-pL-9jL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="gHD-pL-9jL">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="FOw-gQ-3fC"/>
@@ -173,6 +173,9 @@
                                     <constraint firstAttribute="height" constant="100" id="h8X-Tc-0yu"/>
                                     <constraint firstAttribute="width" constant="100" id="wUy-Sv-5Xn"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="n6t-Ju-sEm" eventType="touchUpInside" id="BoO-JD-8U5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-OM-sjz" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -220,6 +223,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.8662716184" green="0.8662716184" blue="0.8662716184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBtnClicked:" destination="n6t-Ju-sEm" eventType="touchUpInside" id="1Is-Pc-pNn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-QR-8HC">
                                 <rect key="frame" x="101.5" y="354" width="172" height="21"/>
@@ -257,11 +263,22 @@
                             <constraint firstItem="Erj-nM-kul" firstAttribute="leading" secondItem="Gs7-s1-adM" secondAttribute="trailing" constant="8" id="xIK-qh-dVH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add/Edit" id="Qfl-cA-wdS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ue3-DA-gE2">
+                    <navigationItem key="navigationItem" title="Add Item" id="Qfl-cA-wdS">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="ue3-DA-gE2">
                             <color key="tintColor" red="0.84705882349999995" green="0.1764705882" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteBtnPressed:" destination="n6t-Ju-sEm" id="Kd6-vo-kwj"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="deleteBtn" destination="ue3-DA-gE2" id="gMt-tA-Qpf"/>
+                        <outlet property="detailsField" destination="tr1-QK-9i2" id="B9z-pO-sTK"/>
+                        <outlet property="priceField" destination="Erj-nM-kul" id="Cno-mS-skc"/>
+                        <outlet property="storePicker" destination="Gcq-d6-Sa1" id="XiU-rn-qT0"/>
+                        <outlet property="thumbImage" destination="gHD-pL-9jL" id="u54-LV-SPt"/>
+                        <outlet property="titleField" destination="eEj-OM-sjz" id="I9E-9m-8tK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQF-kd-tou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
