@@ -22,6 +22,9 @@
 		AB4F7AC21E39B83C00D6DCB0 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F7ABA1E39B83C00D6DCB0 /* Image+CoreDataClass.swift */; };
 		AB4F7AC31E39B83C00D6DCB0 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F7ABB1E39B83C00D6DCB0 /* Image+CoreDataProperties.swift */; };
 		AB4F7AC81E39C2D700D6DCB0 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F7AC71E39C2D700D6DCB0 /* MaterialView.swift */; };
+		AB9C51081E3BB1DB006D97BB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C51071E3BB1DB006D97BB /* ItemCell.swift */; };
+		AB9C510B1E3E6C53006D97BB /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C510A1E3E6C53006D97BB /* ItemDetailsVC.swift */; };
+		AB9C510D1E3E706C006D97BB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C510C1E3E706C006D97BB /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		AB4F7ABA1E39B83C00D6DCB0 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB4F7ABB1E39B83C00D6DCB0 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB4F7AC71E39C2D700D6DCB0 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		AB9C51071E3BB1DB006D97BB /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		AB9C510A1E3E6C53006D97BB /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		AB9C510C1E3E706C006D97BB /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,7 @@
 				AB4F7AC61E39C2B500D6DCB0 /* View */,
 				AB4F7AC41E39B84900D6DCB0 /* Model */,
 				AB4F7A9F1E39B3BA00D6DCB0 /* AppDelegate.swift */,
-				AB4F7AA11E39B3BA00D6DCB0 /* MainVC.swift */,
+				AB9C51091E3E6C17006D97BB /* Controller */,
 				AB4F7AA31E39B3BA00D6DCB0 /* Main.storyboard */,
 				AB4F7AA91E39B3BA00D6DCB0 /* Assets.xcassets */,
 				AB4F7AAB1E39B3BA00D6DCB0 /* LaunchScreen.storyboard */,
@@ -114,8 +120,19 @@
 			isa = PBXGroup;
 			children = (
 				AB4F7AC71E39C2D700D6DCB0 /* MaterialView.swift */,
+				AB9C51071E3BB1DB006D97BB /* ItemCell.swift */,
+				AB9C510C1E3E706C006D97BB /* CustomTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		AB9C51091E3E6C17006D97BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7AA11E39B3BA00D6DCB0 /* MainVC.swift */,
+				AB9C510A1E3E6C53006D97BB /* ItemDetailsVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB9C51081E3BB1DB006D97BB /* ItemCell.swift in Sources */,
 				AB4F7ABF1E39B83C00D6DCB0 /* Item+CoreDataProperties.swift in Sources */,
 				AB4F7ABE1E39B83C00D6DCB0 /* Item+CoreDataClass.swift in Sources */,
 				AB4F7AC11E39B83C00D6DCB0 /* ItemType+CoreDataProperties.swift in Sources */,
@@ -197,11 +215,13 @@
 				AB4F7ABD1E39B83C00D6DCB0 /* Store+CoreDataProperties.swift in Sources */,
 				AB4F7AA21E39B3BA00D6DCB0 /* MainVC.swift in Sources */,
 				AB4F7AC01E39B83C00D6DCB0 /* ItemType+CoreDataClass.swift in Sources */,
+				AB9C510B1E3E6C53006D97BB /* ItemDetailsVC.swift in Sources */,
 				AB4F7ABC1E39B83C00D6DCB0 /* Store+CoreDataClass.swift in Sources */,
 				AB4F7AA01E39B3BA00D6DCB0 /* AppDelegate.swift in Sources */,
 				AB4F7AA81E39B3BA00D6DCB0 /* DreamLister.xcdatamodeld in Sources */,
 				AB4F7AC21E39B83C00D6DCB0 /* Image+CoreDataClass.swift in Sources */,
 				AB4F7AC31E39B83C00D6DCB0 /* Image+CoreDataProperties.swift in Sources */,
+				AB9C510D1E3E706C006D97BB /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
