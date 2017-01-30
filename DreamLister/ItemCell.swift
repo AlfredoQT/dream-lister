@@ -10,6 +10,7 @@ import UIKit
 
 class ItemCell: UITableViewCell {
     
+    @IBOutlet weak var itemTypeLbl: UILabel!
     @IBOutlet weak var detailsLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
@@ -20,5 +21,6 @@ class ItemCell: UITableViewCell {
         detailsLbl.text = item.details
         titleLbl.text = item.title
         thumb.image = item.toImage?.image as? UIImage
+        itemTypeLbl.text = item.toItemType?.type
     }
 }

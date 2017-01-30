@@ -78,7 +78,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         //Tell fetch controller how to sort. Created comes from the Item timestamp
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchRequest.sortDescriptors = [dateSort]
+        let priceSort = NSSortDescriptor(key: "price", ascending: false)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        let typeSort = NSSortDescriptor(key: "toItemType.type", ascending: true)
+        
+        if segment.selectedSegmentIndex == 0{
+            fetchRequest.sortDescriptors = [dateSort]
+        }
+        else if segment.selectedSegmentIndex == 1 {
+            fetchRequest.sortDescriptors = [priceSort]
+        }
+        else if segment.selectedSegmentIndex == 2 {
+            fetchRequest.sortDescriptors = [titleSort]
+        }
+        else if segment.selectedSegmentIndex == 3 {
+            fetchRequest.sortDescriptors = [typeSort]
+        }
+        
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         //Set the controller to controller in the scope of attempFetch
         controller.delegate = self
@@ -133,18 +149,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-    /*func generateTestData(){
-        let item = Item(context: context)
-        item.title = "MacBook Pro"
-        item.price = 1800
-        item.details = "New awesome MBP"
-        let item2 = Item(context: context)
-        item2.title = "Workout App"
-        item2.price = 1
-        item2.details = "Brilliant workout app"
-        //Actually save the items so that they can persist
-        ad.saveContext()
-    }*/
+    
+    
+    @IBAction func segmentChange(_ sender: Any) {
+        attempFetch()
+        tableView.reloadData()
+    }
     
     
 
